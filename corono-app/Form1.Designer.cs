@@ -1,5 +1,5 @@
 ﻿
-namespace WindowsFormsApp1
+namespace corono_app
 {
     partial class Form1
     {

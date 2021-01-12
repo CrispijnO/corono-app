@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30711.63
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "corono-app", "corono-app.csproj", "{739B5377-D157-4C3E-B337-994C154B57D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{739B5377-D157-4C3E-B337-994C154B57D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{739B5377-D157-4C3E-B337-994C154B57D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{739B5377-D157-4C3E-B337-994C154B57D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{739B5377-D157-4C3E-B337-994C154B57D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5D67689D-F0A5-4EAF-883D-CA0ACEAF1914}
+	EndGlobalSection
+EndGlobal
