@@ -14,18 +14,19 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
-bld/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
+corono-app/[Dd]ebug/
+corono-app/[Dd]ebugPublic/
+corono-app/[Rr]elease/
+corono-app/[Rr]eleases/
+corono-app/x64/
+corono-app/x86/
+corono-app/[Aa][Rr][Mm]/
+corono-app/[Aa][Rr][Mm]64/
+corono-app/bld/
+corono-app/[Bb]in/
+corono-app/[Oo]bj/
+corono-app/[Ll]og/
+corono-app/[Oo]bj/[Dd]ug/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
