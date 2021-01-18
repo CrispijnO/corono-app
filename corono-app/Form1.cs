@@ -16,5 +16,15 @@ namespace corono_app
         {
             InitializeComponent();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
