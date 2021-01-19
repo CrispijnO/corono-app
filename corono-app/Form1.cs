@@ -89,23 +89,20 @@ namespace corono_app
             //printing screen based on percentage
             if (chanceInfectionsS >= 15)
             {
-                panel1.BackColor = Color.FromArgb(41, 37, 37);
-                percBox.Text = chanceInfectionsS.ToString();
+               
             }
             else if (chanceInfectionsS >= 5 && chanceInfectionsS < 15)
             {
-                panel1.BackColor = Color.FromArgb(209, 48, 48);
-                percBox.Text = chanceInfectionsS.ToString();
+               
             }
             else if (chanceInfectionsS >= 1 && chanceInfectionsS  < 5)
             {
-                panel1.BackColor = Color.FromArgb(237, 138, 38);
-                percBox.Text = chanceInfectionsS.ToString();
+               
+               
             }
             else if (chanceInfectionsS < 1)
             {
-                panel1.BackColor = Color.FromArgb(10, 201, 23);
-                percBox.Text = chanceInfectionsS.ToString();
+              
             }
         }
 
