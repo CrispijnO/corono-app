@@ -36,7 +36,6 @@ namespace corono_app
     class postCodeApi
     {
         public string postal_code { get; set; }
-        public string[] street_names { get; set; }
         public string city { get; set; }
         public string municipality { get; set; }
         public List<areasModel> administrative_areas { get; set; }

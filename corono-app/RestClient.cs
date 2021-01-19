@@ -20,6 +20,8 @@ namespace corono_app
     {
         public string endPoint { get; set; }
         public httpVerb httpMethod { get; set; }
+        public string host { get; set; }
+        public string[][] headers { get; set; }
 
         public RESTClient()
         {
@@ -35,8 +37,15 @@ namespace corono_app
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(endPoint);
 
             request.Method = httpMethod.ToString();
-            request.Host = "demo.recras.nl";
-            request.Headers.Add("Authorization", "Bearer ktgz4992zI47ElVAFzExtXPwiurhH_l9");
+            request.Host = host;
+            if (headers.Length > 0)
+            {
+                for (int i = 0; i < headers.Length; i++)
+                {
+                    request.Headers.Add(headers[i][0], headers[i][1]);
+                }
+            }
+            
             HttpWebResponse response = null;
 
             try
