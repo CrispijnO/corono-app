@@ -66,13 +66,14 @@ namespace corono_app
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
             this.label2.Location = new System.Drawing.Point(315, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 29);
+            this.label2.Size = new System.Drawing.Size(176, 36);
             this.label2.TabIndex = 4;
             this.label2.Text = "Corona App";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
@@ -88,7 +89,8 @@ namespace corono_app
             this.txtbox.ReadOnly = true;
             this.txtbox.Size = new System.Drawing.Size(260, 76);
             this.txtbox.TabIndex = 6;
-            this.txtbox.Text = "Met deze app kunt u het aantal procenten berekenen of u besmet bent of niet";
+            this.txtbox.Text = "Met deze app kunt u uw kans om corona te contracteren met verband tot het aantal " +
+    "mensen in uw woonplaats en het aantal mensen dat u op een dag tegenkomt";
             this.txtbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtbox.TextChanged += new System.EventHandler(this.txtbox_TextChanged);
             // 
@@ -98,7 +100,7 @@ namespace corono_app
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(168)))), ((int)(((byte)(196)))));
             this.label1.Location = new System.Drawing.Point(340, 169);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.Size = new System.Drawing.Size(94, 15);
             this.label1.TabIndex = 7;
             this.label1.Text = "Jouw Gegevens";
             // 
@@ -125,7 +127,7 @@ namespace corono_app
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(168)))), ((int)(((byte)(196)))));
             this.label3.Location = new System.Drawing.Point(331, 264);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 13);
+            this.label3.Size = new System.Drawing.Size(133, 15);
             this.label3.TabIndex = 10;
             this.label3.Text = "Jouw Besmettingskans";
             // 
