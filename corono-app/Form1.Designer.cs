@@ -38,12 +38,14 @@ namespace corono_app
             this.txtbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.contactBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.percBox = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // errorProvider1
@@ -53,9 +55,10 @@ namespace corono_app
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(168)))), ((int)(((byte)(196)))));
-            this.pictureBox1.Location = new System.Drawing.Point(230, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(307, 27);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(317, 367);
+            this.pictureBox1.Size = new System.Drawing.Size(423, 452);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -65,7 +68,8 @@ namespace corono_app
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(168)))), ((int)(((byte)(196)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.label2.Location = new System.Drawing.Point(315, 31);
+            this.label2.Location = new System.Drawing.Point(420, 38);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(176, 36);
             this.label2.TabIndex = 4;
@@ -84,11 +88,12 @@ namespace corono_app
             this.txtbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
             this.txtbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtbox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
-            this.txtbox.Location = new System.Drawing.Point(261, 74);
+            this.txtbox.Location = new System.Drawing.Point(348, 91);
+            this.txtbox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbox.Multiline = true;
             this.txtbox.Name = "txtbox";
             this.txtbox.ReadOnly = true;
-            this.txtbox.Size = new System.Drawing.Size(260, 76);
+            this.txtbox.Size = new System.Drawing.Size(346, 93);
             this.txtbox.TabIndex = 6;
             this.txtbox.Text = "Met deze app kunt u uw kans om corona te contracteren met verband tot het aantal " +
     "mensen in uw woonplaats en het aantal mensen dat u op een dag tegenkomt";
@@ -99,77 +104,98 @@ namespace corono_app
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(168)))), ((int)(((byte)(196)))));
-            this.label1.Location = new System.Drawing.Point(340, 153);
+            this.label1.Location = new System.Drawing.Point(453, 188);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 15);
+            this.label1.Size = new System.Drawing.Size(109, 17);
             this.label1.TabIndex = 7;
             this.label1.Text = "Jouw Gegevens";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(334, 175);
+            this.textBox1.Location = new System.Drawing.Point(445, 215);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
+            this.textBox1.Size = new System.Drawing.Size(159, 22);
             this.textBox1.TabIndex = 8;
             this.textBox1.Text = "     Uw Postcode";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // contactBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(334, 205);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 20);
-            this.textBox2.TabIndex = 9;
-            this.textBox2.Text = "Aantal Contactpersonen";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.contactBox.Location = new System.Drawing.Point(445, 252);
+            this.contactBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.contactBox.Name = "contactBox";
+            this.contactBox.Size = new System.Drawing.Size(159, 22);
+            this.contactBox.TabIndex = 9;
+            this.contactBox.Text = "Aantal Contactpersonen";
+            this.contactBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.contactBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(168)))), ((int)(((byte)(196)))));
-            this.label3.Location = new System.Drawing.Point(331, 264);
+            this.label3.Location = new System.Drawing.Point(441, 325);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 15);
+            this.label3.Size = new System.Drawing.Size(151, 17);
             this.label3.TabIndex = 10;
             this.label3.Text = "Jouw Besmettingskans";
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(294, 280);
+            this.panel1.Controls.Add(this.percBox);
+            this.panel1.Location = new System.Drawing.Point(394, 346);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.Size = new System.Drawing.Size(267, 123);
             this.panel1.TabIndex = 11;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(359, 238);
+            this.button1.Location = new System.Drawing.Point(479, 293);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 12;
             this.button1.Text = "Bereken";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // percBox
+            // 
+            this.percBox.AutoSize = true;
+            this.percBox.Location = new System.Drawing.Point(107, 54);
+            this.percBox.Name = "percBox";
+            this.percBox.Size = new System.Drawing.Size(46, 17);
+            this.percBox.TabIndex = 0;
+            this.percBox.Text = "label4";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.contactBox);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "M";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,9 +209,10 @@ namespace corono_app
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox contactBox;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label percBox;
     }
 }
