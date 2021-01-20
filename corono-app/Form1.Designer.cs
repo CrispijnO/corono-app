@@ -37,7 +37,7 @@ namespace corono_app
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.postcodeTextBox = new System.Windows.Forms.TextBox();
             this.contactBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -69,7 +69,7 @@ namespace corono_app
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(112)))), ((int)(((byte)(112)))));
             this.label2.Location = new System.Drawing.Point(315, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(176, 36);
+            this.label2.Size = new System.Drawing.Size(141, 29);
             this.label2.TabIndex = 4;
             this.label2.Text = "Corona App";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -103,18 +103,18 @@ namespace corono_app
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(168)))), ((int)(((byte)(196)))));
             this.label1.Location = new System.Drawing.Point(340, 153);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 15);
+            this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Jouw Gegevens";
             // 
-            // textBox1
+            // postcodeTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(334, 175);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
-            this.textBox1.TabIndex = 8;
-            this.textBox1.Text = "Uw Postcode";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.postcodeTextBox.Location = new System.Drawing.Point(334, 175);
+            this.postcodeTextBox.Name = "postcodeTextBox";
+            this.postcodeTextBox.Size = new System.Drawing.Size(120, 20);
+            this.postcodeTextBox.TabIndex = 8;
+            this.postcodeTextBox.Text = "Uw Postcode";
+            this.postcodeTextBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // contactBox
             // 
@@ -131,7 +131,7 @@ namespace corono_app
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(168)))), ((int)(((byte)(196)))));
             this.label3.Location = new System.Drawing.Point(331, 264);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 15);
+            this.label3.Size = new System.Drawing.Size(115, 13);
             this.label3.TabIndex = 10;
             this.label3.Text = "Jouw Besmettingskans";
             // 
@@ -150,7 +150,7 @@ namespace corono_app
             this.percBox.Location = new System.Drawing.Point(80, 44);
             this.percBox.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.percBox.Name = "percBox";
-            this.percBox.Size = new System.Drawing.Size(41, 15);
+            this.percBox.Size = new System.Drawing.Size(35, 13);
             this.percBox.TabIndex = 0;
             this.percBox.Text = "label4";
             // 
@@ -174,7 +174,7 @@ namespace corono_app
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.contactBox);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.postcodeTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtbox);
             this.Controls.Add(this.label2);
@@ -200,7 +200,7 @@ namespace corono_app
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox contactBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox postcodeTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label percBox;
