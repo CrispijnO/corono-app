@@ -197,6 +197,12 @@ namespace corono_app
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(contactBox.Text.Length == 0 || postcodeTextBox.Text.Length == 0)
+            {
+                label4.Show();
+                return;
+            }
+            label4.Hide();
             int visited = Convert.ToInt32(contactBox.Text);
             string postCode = postcodeTextBox.Text;
             List<coronaApi> coronaStats = getCoronaStats();
