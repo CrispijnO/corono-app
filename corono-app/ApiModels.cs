@@ -35,6 +35,11 @@ namespace corono_app
 
     class postCodeApi
     {
+        public List<postCodeApiResults> results { get; set; }
+    }
+
+    class postCodeApiResults
+    {
         public string postal_code { get; set; }
         public string city { get; set; }
         public string municipality { get; set; }
@@ -53,5 +58,15 @@ namespace corono_app
         public string type { get; set; }
         public string name { get; set; }
         public string abbreviation { get; set; }
+    }
+
+    class CityPopulation
+    {
+        public CityPopulationData data { get; set; }
+    }
+
+    class CityPopulationData
+    {
+        public int population { get; set; }
     }
 }
