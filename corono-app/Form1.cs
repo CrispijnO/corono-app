@@ -8,11 +8,17 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace corono_app
 {
     public partial class Form1 : Form
     {
+        RESTClient client = new RESTClient();
+        class jsonDeserialize
+        {
+            public DataSet results { get; set; }
+        }
 
         public Form1()
         {
@@ -22,8 +28,6 @@ namespace corono_app
 
         private void init()
         {
-
-            RESTClient client = new RESTClient();
             /*
              CITY API
             client.endPoint = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/NL/regions/FR/cities";
@@ -47,8 +51,8 @@ namespace corono_app
             string[][] headers = new string[][] { };
             client.headers = headers;
             */
-            string response = client.makeRequest();
-            Console.WriteLine(response);
+            //string response = client.makeRequest();
+            //Console.WriteLine(response);
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -63,7 +67,7 @@ namespace corono_app
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            int visited = Convert.ToInt32(contactBox.Text);
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -73,6 +77,18 @@ namespace corono_app
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //get city from postcode
+            string postcode = textBox1.Text.ToLower();
+            client.endPoint = "https://api.spikkl.nl/geo/nld/lookup.json?postal_code=" + postcode + "&filter=city&key=2e6a697089bb6b7ae817737d21d080dd";
+            client.host = "api.spikkl.nl";
+            string[][] headers = new string[][] { };
+            client.headers = headers;
+            //string response = client.makeRequest();
+            string response = "{\"results\":[{\"postal_code\":\"8933CL\",\"match\":\"approximate\"}],\"status\":\"ok\",\"meta\":{\"timestamp\":1611139326473,\"trace_id\":\"8e386fbdeadcf115a587a09a\"}}";
+            postCodeApi responseDeser = JsonConvert.DeserializeObject<postCodeApi>(response);
+            //DataTable dataTable = responseDeser.Tables["results"];
+            Console.WriteLine(responseDeser);
+
             //calculating percentage
             int visited = Convert.ToInt32(contactBox.Text);
             #region postcodeToCitizens
