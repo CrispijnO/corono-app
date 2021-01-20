@@ -19,7 +19,7 @@ namespace corono_app
         {
             InitializeComponent();
             List<coronaApi> coronaStats = getCoronaStats();
-            handleApplication(coronaStats, "8447AA", 1200);
+            handleApplication(coronaStats, "8447AA", 500);
         }
         private List<coronaApi> getCoronaStats()
         {
@@ -118,7 +118,45 @@ namespace corono_app
 
         private void handlePercentages(int citizenCount, int coronaStatCount, int visitedCount)
         {
-            // todo.
+            //calculating percentage
+            //int visited = Convert.ToInt32(contactBox.Text);
+            int visited = visitedCount;
+            #region postcodeToCitizens
+
+            //here the Postcode will be converted to citizens, via api or hardcoded formulas
+
+
+            #endregion
+            int citizens = citizenCount; //is going to be replaced by the citizens in your city
+                                         //int infected = 512; //is going to get replaced by the called number from an api 
+                                         //int surroundedPeople = 780; //the number of people in a ? radius from your postcode
+            float InfectedCitizen = citizenCount / coronaStatCount;
+            Console.WriteLine(InfectedCitizen);
+            float chanceInfection = visitedCount / InfectedCitizen;
+            Console.WriteLine(">> " + chanceInfection);
+            float chanceInfectionsS = (visited / citizens) * 100; //chance you were infected
+
+            //printing screen based on percentage
+            if (chanceInfection >= 15)
+            {
+                Console.WriteLine("Its higher than 15%");
+            }
+            else if (chanceInfection >= 5 && chanceInfection < 15)
+            {
+                Console.WriteLine("Its between 5 and 15%");
+
+            }
+            else if (chanceInfection >= 1 && chanceInfection < 5)
+            {
+                Console.WriteLine("Its between 1 and 5%");
+
+
+            }
+            else if (chanceInfection < 1)
+            {
+                Console.WriteLine("Its lower than 1%");
+
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
