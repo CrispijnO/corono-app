@@ -181,49 +181,7 @@ namespace corono_app
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //get city from postcode
-            string postcode = textBox1.Text.ToLower();
-            client.endPoint = "https://api.spikkl.nl/geo/nld/lookup.json?postal_code=" + postcode + "&filter=city&key=2e6a697089bb6b7ae817737d21d080dd";
-            client.host = "api.spikkl.nl";
-            string[][] headers = new string[][] { };
-            client.headers = headers;
-            //string response = client.makeRequest();
-            string response = "{\"results\":[{\"postal_code\":\"8933CL\",\"match\":\"approximate\"}],\"status\":\"ok\",\"meta\":{\"timestamp\":1611139326473,\"trace_id\":\"8e386fbdeadcf115a587a09a\"}}";
-            postCodeApi responseDeser = JsonConvert.DeserializeObject<postCodeApi>(response);
-            //DataTable dataTable = responseDeser.Tables["results"];
-            Console.WriteLine(responseDeser);
-
-            //calculating percentage
-            int visited = Convert.ToInt32(contactBox.Text);
-            #region postcodeToCitizens
-            
-            //here the Postcode will be converted to citizens, via api or hardcoded formulas
-
-
-            #endregion 
-            int citizens = 35000; //is going to be replaced by the citizens in your city
-          //int infected = 512; //is going to get replaced by the called number from an api 
-          //int surroundedPeople = 780; //the number of people in a ? radius from your postcode
-            float chanceInfectionsS = (visited / citizens) * 100; //chance you were infected
-         
-            //printing screen based on percentage
-            if (chanceInfectionsS >= 15)
-            {
-               
-            }
-            else if (chanceInfectionsS >= 5 && chanceInfectionsS < 15)
-            {
-               
-            }
-            else if (chanceInfectionsS >= 1 && chanceInfectionsS  < 5)
-            {
-               
-               
-            }
-            else if (chanceInfectionsS < 1)
-            {
-              
-            }
+           
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
