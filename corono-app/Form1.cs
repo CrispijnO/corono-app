@@ -18,8 +18,8 @@ namespace corono_app
         public Form1()
         {
             InitializeComponent();
-            List<coronaApi> coronaStats = getCoronaStats();
-            handleApplication(coronaStats, "8447AA", 500);
+            //List<coronaApi> coronaStats = getCoronaStats();
+            //handleApplication(coronaStats, "8447AA", 500);
         }
         private List<coronaApi> getCoronaStats()
         {
@@ -101,7 +101,7 @@ namespace corono_app
                 citizenCount += population.data.population;
                 Console.WriteLine(population.data.population + " " + citizenCount);
                 // Waiting 1 second for the API rate limit.
-                await Task.Delay(1000);
+                await Task.Delay(1500);
                 //
                 i++;
             }
@@ -120,6 +120,9 @@ namespace corono_app
         {
             //calculating percentage
             //int visited = Convert.ToInt32(contactBox.Text);
+            Console.WriteLine("CitizenCount: " + citizenCount);
+            Console.WriteLine("CoronaCount: " + coronaStatCount);
+            Console.WriteLine("VisitedCount: " + visitedCount);
             int visited = visitedCount;
             #region postcodeToCitizens
 
@@ -130,11 +133,24 @@ namespace corono_app
             int citizens = citizenCount; //is going to be replaced by the citizens in your city
                                          //int infected = 512; //is going to get replaced by the called number from an api 
                                          //int surroundedPeople = 780; //the number of people in a ? radius from your postcode
-            float InfectedCitizen = citizenCount / coronaStatCount;
+            decimal InfectedCitizen = citizenCount / coronaStatCount;
             Console.WriteLine(InfectedCitizen);
-            float chanceInfection = visitedCount / InfectedCitizen;
+            decimal chanceInfection = visitedCount / InfectedCitizen;
             Console.WriteLine(">> " + chanceInfection);
-            float chanceInfectionsS = (visited / citizens) * 100; //chance you were infected
+
+
+
+
+            /*
+             * 78754 / 1252
+             * 
+             * 
+             * 500 / ander antwoord = 7.9%
+             * 
+             * 7.948802600502832
+             * 7.948802600502832
+             * 787.54
+             */
 
             //printing screen based on percentage
             if (chanceInfection >= 15)
@@ -184,7 +200,16 @@ namespace corono_app
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            if(contactBox.Text.Length == 0 || postcodeTextBox.Text.Length == 0)
+            {
+                label4.Show();
+                return;
+            }
+            label4.Hide();
+            int visited = Convert.ToInt32(contactBox.Text);
+            string postCode = postcodeTextBox.Text;
+            List<coronaApi> coronaStats = getCoronaStats();
+            handleApplication(coronaStats, postCode, visited);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
