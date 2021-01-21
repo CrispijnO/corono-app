@@ -46,7 +46,7 @@ namespace corono_app
         private async void handleApplication(List<coronaApi> coronaStats, string postCode, int visitedCount)
         {
             RESTClient client = new RESTClient();
-            string postcode = postCode; // hard coded.
+            string postcode = postCode;
             client.endPoint = $"https://api.spikkl.nl/geo/nld/lookup.json?postal_code={postcode}&filter=postal_code,street_name,city,municipality,administrative_areas,country&key=2e6a697089bb6b7ae817737d21d080dd";
             client.host = "api.spikkl.nl";
             client.headers = new string[][] { };
@@ -85,7 +85,7 @@ namespace corono_app
                 await Task.Delay(1000);
                 i++;
             };
-            await Task.Delay(1000); // handeling the 1 request per second :(
+            await Task.Delay(1000); // handeling the 1 request per second
             for (int i = 0; i < cityCodes.Count;)
             {
                 string cityCode = cityCodes[i];
@@ -96,10 +96,8 @@ namespace corono_app
                 string[][] headers = new string[][] { apiKey, host };
                 client.headers = headers;
                 response = client.makeRequest();
-                Console.WriteLine(response);
                 CityPopulation population = JsonConvert.DeserializeObject<CityPopulation>(response);
                 citizenCount += population.data.population;
-                Console.WriteLine(population.data.population + " " + citizenCount);
                 // Waiting 1 second for the API rate limit.
                 await Task.Delay(1500);
                 //
@@ -120,9 +118,6 @@ namespace corono_app
         {
             //calculating percentage
             //int visited = Convert.ToInt32(contactBox.Text);
-            Console.WriteLine("CitizenCount: " + citizenCount);
-            Console.WriteLine("CoronaCount: " + coronaStatCount);
-            Console.WriteLine("VisitedCount: " + visitedCount);
             int visited = visitedCount;
             #region postcodeToCitizens
 
@@ -134,9 +129,7 @@ namespace corono_app
                                          //int infected = 512; //is going to get replaced by the called number from an api 
                                          //int surroundedPeople = 780; //the number of people in a ? radius from your postcode
             decimal InfectedCitizen = citizenCount / coronaStatCount;
-            Console.WriteLine(InfectedCitizen);
             decimal chanceInfection = visitedCount / InfectedCitizen;
-            Console.WriteLine(">> " + chanceInfection);
 
 
 
@@ -182,8 +175,7 @@ namespace corono_app
         {
           
         }
-        *
-            private void txtbox_TextChanged(object sender, EventArgs e)
+        private void txtbox_TextChanged(object sender, EventArgs e)
         {
 
         }
