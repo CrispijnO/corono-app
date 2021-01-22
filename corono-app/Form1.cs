@@ -47,7 +47,7 @@ namespace corono_app
         {
             RESTClient client = new RESTClient();
             string postcode = postCode;
-            client.endPoint = $"https://api.spikkl.nl/geo/nld/lookup.json?postal_code={postcode}&filter=postal_code,street_name,city,municipality,administrative_areas,country&key=2e6a697089bb6b7ae817737d21d080dd";
+            client.endPoint = $"https://api.spikkl.nl/geo/nld/lookup.json?postal_code={postcode}&filter=postal_code,street_name,city,municipality,administrative_areas,country&key=b6ee7d920ad5f67335a422f220f93cfc";
             client.host = "api.spikkl.nl";
             client.headers = new string[][] { };
             string response = client.makeRequest();
