@@ -150,24 +150,26 @@ namespace corono_app
             {
                 Console.WriteLine("Its higher than 15%");
                 panel1.BackColor = Color.FromArgb(93, 80, 80);
+                percBox.Text = "+15%";
             }
             else if (chanceInfection >= 5 && chanceInfection < 15)
             {
                 Console.WriteLine("Its between 5 and 15%");
                 panel1.BackColor = Color.FromArgb(238, 77, 77);
+                percBox.Text = "5% - 15%";
 
             }
             else if (chanceInfection >= 1 && chanceInfection < 5)
             {
                 Console.WriteLine("Its between 1 and 5%");
                 panel1.BackColor = Color.FromArgb(236, 151, 23);
-
+                percBox.Text = "1% - 5%";
             }
             else if (chanceInfection < 1)
             {
                 Console.WriteLine("Its lower than 1%");
                 panel1.BackColor = Color.FromArgb(110, 214, 30);
-
+                percBox.Text = "-1%";
             }
         }
 
