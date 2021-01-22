@@ -53,9 +53,14 @@ namespace corono_app
             string response = client.makeRequest();
             postCodeApi postCodeResults = JsonConvert.DeserializeObject<postCodeApi>(response);
             List<string> cities = new List<string>();
+            if(postCodeResults.results == null)
+            {
+                label4.Show();
+                return;
+            }
             postCodeResults.results.ForEach(res =>
             {
-                if (res.postal_code != postcode) { return; }
+                if (res.postal_code != postcode.ToUpper()) { return; }
                 int pos = cities.IndexOf(res.city);
                 if (pos == -1)
                 {
@@ -199,8 +204,17 @@ namespace corono_app
                 label4.Show();
                 return;
             }
+            int visited;
             label4.Hide();
-            int visited = Convert.ToInt32(contactBox.Text);
+            try
+            {
+                visited = Convert.ToInt32(contactBox.Text);
+            }
+            catch
+            {
+                label4.Show();
+                return;
+            }
             string postCode = postcodeTextBox.Text;
             List<coronaApi> coronaStats = getCoronaStats();
             handleApplication(coronaStats, postCode, visited);

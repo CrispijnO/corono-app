@@ -182,9 +182,9 @@ namespace corono_app
             this.label4.ForeColor = System.Drawing.Color.Red;
             this.label4.Location = new System.Drawing.Point(646, 266);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 23);
+            this.label4.Size = new System.Drawing.Size(85, 37);
             this.label4.TabIndex = 13;
-            this.label4.Text = "Please fill in";
+            this.label4.Text = "Please fill in correctly";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label4.Visible = false;
             // 
