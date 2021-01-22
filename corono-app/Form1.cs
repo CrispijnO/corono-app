@@ -67,10 +67,15 @@ namespace corono_app
             postCodeApi postCodeResults = JsonConvert.DeserializeObject<postCodeApi>(response);
             List<string> cities = new List<string>();
             // looping over the dezerialized data.
+            if (postCodeResults.results == null)
+            {
+                label4.Show();
+                return;
+            }
             postCodeResults.results.ForEach(res =>
             {
                 // checking if its the right postcode. 
-                if (res.postal_code != postcode) { return; }
+                if (res.postal_code != postcode.ToUpper()) { return; }
                 // checking if the current city exists in the new List.
                 // if it doesn't exist in the new list, add it.
                 int pos = cities.IndexOf(res.city);
@@ -211,7 +216,7 @@ namespace corono_app
 
         private void label2_Click(object sender, EventArgs e)
         {
-          
+
         }
         private void txtbox_TextChanged(object sender, EventArgs e)
         {
@@ -230,15 +235,24 @@ namespace corono_app
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(contactBox.Text.Length == 0 || postcodeTextBox.Text.Length == 0)
+            if (contactBox.Text.Length == 0 || postcodeTextBox.Text.Length == 0)
             {
                 label4.Show();
                 return;
             }
+            int visited;
             label4.Hide();
-            // getting the visitedCount from the contactBox and converting it to a Number.
-            int visited = Convert.ToInt32(contactBox.Text);
-            // getting the postCode from the postcodeTextBox
+            try
+            {
+                // getting the visitedCount from the contactBox and converting it to a Number.
+                visited = Convert.ToInt32(contactBox.Text);
+                // getting the postCode from the postcodeTextBox
+            }
+            catch
+            {
+                label4.Show();
+                return;
+            }
             string postCode = postcodeTextBox.Text;
             // getting the coronaStats
             List<coronaApi> coronaStats = getCoronaStats();
