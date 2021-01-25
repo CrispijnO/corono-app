@@ -14,11 +14,12 @@ namespace corono_app
 {
     public partial class Form1 : Form
     {
+        List<coronaApi> coronaStats;
 
         public Form1()
         {
             InitializeComponent();
-            //List<coronaApi> coronaStats = getCoronaStats();
+            coronaStats = getCoronaStats();
             //handleApplication(coronaStats, "8447AA", 500);
         }
         private List<coronaApi> getCoronaStats()
@@ -216,7 +217,7 @@ namespace corono_app
                 return;
             }
             string postCode = postcodeTextBox.Text;
-            List<coronaApi> coronaStats = getCoronaStats();
+            //List<coronaApi> coronaStats = getCoronaStats();
             handleApplication(coronaStats, postCode, visited);
         }
 
