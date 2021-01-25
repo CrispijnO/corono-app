@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace corono_app
 {
+    // API Methodes.
     public enum httpVerb
     {
         GET,
@@ -15,9 +16,12 @@ namespace corono_app
         PUT,
         DELETE
     }
-
+    // RESTClient class
+    // will handle all the API calls this application makes.
+    // will take in: endPoint, Host, Headers
     class RESTClient
     {
+        // defining endPoint, httpMethod, host and the headers.
         public string endPoint { get; set; }
         public httpVerb httpMethod { get; set; }
         public string host { get; set; }
@@ -28,16 +32,18 @@ namespace corono_app
             endPoint = "";
             httpMethod = httpVerb.GET;
         }
-
+        // Making the request.
         public string makeRequest()
         {
-
+            // defining the responseValue to an empty String
             string strResponseValue = string.Empty;
-
+            // creating the webRequest
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(endPoint);
-
+            // setting the Method and host
             request.Method = httpMethod.ToString();
             request.Host = host;
+            // if the headers array includes more than 0
+            // loop through the array and add all the items.
             if (headers.Length > 0)
             {
                 for (int i = 0; i < headers.Length; i++)
@@ -58,15 +64,19 @@ namespace corono_app
                     {
                         using (StreamReader reader = new StreamReader(responseStream))
                         {
+                            // defining strResponseValue
                             strResponseValue = reader.ReadToEnd();
                         }
                     }
                 }
             }
+            // catching the errors. IF there is an error.
             catch (Exception ex)
             {
+                // setting strResponseValue to the error message.
                 strResponseValue = "{\"errorMessages\":[\"" + ex.Message.ToString() + "\"],\"errors\":{}}";
             }
+            // when all the code is finshed dispose the response.
             finally
             {
                 if (response != null)
@@ -74,7 +84,7 @@ namespace corono_app
                     ((IDisposable)response).Dispose();
                 }
             }
-
+            // return strResponseValue
             return strResponseValue;
         }
     }
